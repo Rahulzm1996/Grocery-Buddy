@@ -1,3 +1,4 @@
+// Get List from local storage
 function getLocalStorage() {
     const list = localStorage.getItem("list");
     if (list) {
