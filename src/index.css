@@ -323,6 +323,15 @@ Variables
     column-gap: 0.5rem;
     justify-content: flex-end;
   }
+
+ @media screen and (max-width: 360px) {
+    .grocery {
+      width:70%;
+    }
+    .submit-btn {
+      width:30%;
+    }
+  }
   
   .search-box-container {
     display: flex;
