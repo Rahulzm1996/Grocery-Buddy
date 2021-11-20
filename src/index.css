@@ -324,7 +324,7 @@ Variables
     justify-content: flex-end;
   }
 
- @media screen and (max-width: 360px) {
+  @media screen and (max-width: 360px) {
     .grocery {
       width:70%;
     }
@@ -336,21 +336,22 @@ Variables
   .search-box-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    flex-grow: 1;
     margin-top: 0.5rem;
     margin-bottom: -1.5rem;
   }
   .search-box-container .grocery-form {
-    flex-basis: 84%;
+    flex-basis:83%;
+  }
+
+  .toggle-btn{
+    font-size: 1.25rem;
+    cursor:pointer;
+    width:3rem;
   }
   
   @media screen and (max-width: 380px) {
-    .search-box-container .form-control {
-      display: inline-block;
-    }
-    .search-box-container .grocery-form input[type="text"] {
-      width: 100%;
+    .search-box-container .grocery-form {
+      flex-basis:70%;
     }
   }

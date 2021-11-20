@@ -6,18 +6,19 @@ import {
   clearItemList,
   removeItem,
   editListItem,
-  sortAscList,
-  sortDescList,
   searchItemInList,
+  sortListToggle
 } from "./actions/actionCreater";
 
 import { useSelector, useDispatch } from "react-redux";
+import { BsArrowDownUp } from "react-icons/bs";
 
 function App() {
   const [name, setName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
   const [search, setSearch] = useState("");
+  const [toggle,setToggle] = useState(false);
   const [alert, setAlert] = useState({
     show: false,
     msg: "",
@@ -91,11 +92,9 @@ function App() {
     setName(specificItem.title);
   };
 
-  const sortAsc = () => {
-    dispatch(sortAscList(list));
-  };
-  const sortDesc = () => {
-    dispatch(sortDescList(list));
+  const sortToggle = () => {
+    setToggle(!toggle)
+    dispatch(sortListToggle(list,toggle));
   };
   const searchGrocery = (item) => {
     dispatch(searchItemInList(item, list));
@@ -139,13 +138,8 @@ function App() {
               />
             </div>
           </form>
-          <div className="sort-container">
-            <div onClick={sortAsc}>
-              <i className="fas fa-sort-alpha-up"></i>
-            </div>
-            <div onClick={sortDesc}>
-              <i className="fas fa-sort-alpha-down-alt"></i>
-            </div>
+          <div className="toggle-btn" onClick={sortToggle}>
+            <BsArrowDownUp/>
           </div>
         </div>
       )}
