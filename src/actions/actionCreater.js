@@ -68,7 +68,7 @@ export const searchItemInList = (searchedValue, list) => {
     searchedList = [...masterList];
   } else {
     searchedList = masterList.filter((item) => {
-      if (item.title.startsWith(searchedValue)) {
+      if (item.title.startsWith(searchedValue.toLowerCase())) {
         return true;
       }
       return false;
